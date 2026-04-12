@@ -1,52 +1,55 @@
-# EcoPonto BH (TP1)
+# EcoPonto BH
 
-## Contexto rápido
-Projeto simples da disciplina para praticar Engenharia de Software com foco em ODS.
-A ideia é resolver um problema real sem complicar demais.
+## Descrição
+O **EcoPonto BH** é uma aplicação web desenvolvida para facilitar a busca e o cadastro de pontos de coleta seletiva e descarte adequado de resíduos. A proposta do sistema é ajudar cidadãos a encontrarem locais apropriados para descartar materiais como papel, plástico, vidro, metal, eletrônicos, pilhas e baterias, contribuindo para práticas mais sustentáveis no contexto urbano.
 
-## O que esta entrega (TP1) precisa ter
-Nesta entrega, cada aluno(a) deverá realizar a análise inicial do projeto que será desenvolvido. Para tanto, espera-se que sejam definidos:
-1. o objetivo que será abordado no trabalho;
-2. o problema que será resolvido pela solução de software planejada;
-3. o tipo de solução que será desenvolvido;
-4. os requisitos funcionais e não funcionais da aplicação;
-5. o diagrama de caso de uso da aplicação.
+Nesta entrega (TP1), a análise inicial do projeto define: objetivo, problema, tipo de solução, requisitos funcionais e não funcionais e diagrama de caso de uso.
 
----
+## Objetivo
+Desenvolver uma solução de software que auxilie a população no acesso a informações sobre pontos de coleta, promovendo o descarte correto de resíduos e incentivando ações relacionadas à sustentabilidade.
 
-## 1) Objetivo
-Ajudar pessoas a descartarem resíduos corretamente, encontrando pontos de coleta em Belo Horizonte.
+## Problema
+Muitas pessoas não sabem onde descartar corretamente determinados resíduos, especialmente materiais recicláveis e resíduos especiais, como eletrônicos e pilhas. A falta de centralização dessas informações dificulta a adoção de práticas sustentáveis e contribui para o descarte inadequado.
 
-## 2) Problema
-Muita gente não sabe onde descartar recicláveis e resíduos especiais (pilhas, baterias, eletrônicos etc.).
-Sem informação centralizada, o descarte acaba sendo feito de forma errada.
+## ODS relacionada
+Este projeto está relacionado ao **Objetivo de Desenvolvimento Sustentável 12 - Consumo e Produção Responsáveis**, com foco em incentivar o descarte adequado e ampliar o acesso à informação ambiental.
 
-## 3) Tipo de solução
-Sistema web com frontend + backend (não é página estática).
+## Tipo de solução
+A solução proposta é um **sistema web com frontend e backend**, permitindo que usuários consultem pontos de coleta e que a aplicação mantenha os dados organizados em uma base estruturada.
 
-## 4) Requisitos
-### Funcionais (RF)
-- RF01: Cadastrar ponto de coleta.
-- RF02: Listar pontos de coleta.
-- RF03: Buscar por bairro, nome ou tipo de resíduo.
-- RF04: Ver detalhes de um ponto.
-- RF05: Editar ponto.
-- RF06: Excluir ponto.
+## Justificativa da solução
+A escolha por um sistema web se deve à facilidade de acesso por navegador, à praticidade de uso em diferentes dispositivos e à possibilidade de integrar funcionalidades como cadastro, busca, filtragem e gerenciamento de pontos de coleta em uma única aplicação.
 
-### Não funcionais (RNF)
-- RNF01: Interface simples e direta.
-- RNF02: Funcionar em navegadores modernos.
-- RNF03: Consultas com resposta rápida (meta: até 2s em cenário normal).
-- RNF04: Dados persistidos em banco.
-- RNF05: Projeto público no GitHub.
-- RNF06: Documentação em Markdown.
+## Funcionalidades esperadas
+- Consultar pontos de coleta cadastrados
+- Pesquisar pontos de coleta por bairro, tipo de resíduo ou nome
+- Visualizar informações de cada ponto de coleta
+- Cadastrar novos pontos de coleta
+- Editar informações de pontos cadastrados
+- Remover pontos de coleta
 
-## 5) Diagrama de caso de uso
+## Requisitos funcionais
+- RF01: O sistema deve permitir o cadastro de pontos de coleta.
+- RF02: O sistema deve permitir a listagem dos pontos de coleta cadastrados.
+- RF03: O sistema deve permitir a busca de pontos de coleta por critérios como bairro, nome ou tipo de resíduo.
+- RF04: O sistema deve permitir a visualização dos detalhes de um ponto de coleta.
+- RF05: O sistema deve permitir a edição de pontos de coleta.
+- RF06: O sistema deve permitir a exclusão de pontos de coleta.
+
+## Requisitos não funcionais
+- RNF01: O sistema deve possuir interface simples e intuitiva.
+- RNF02: O sistema deve ser acessível por navegadores modernos.
+- RNF03: O sistema deve apresentar tempo de resposta adequado para operações de consulta.
+- RNF04: O sistema deve manter os dados organizados em uma base persistente.
+- RNF05: O código-fonte e a documentação devem ser mantidos em repositório público no GitHub.
+- RNF06: A documentação do projeto deve ser escrita em Markdown.
+
+## Caso de uso
 ```mermaid
 flowchart LR
     C[Cidadão] --> UC1((Consultar pontos))
-    C --> UC2((Buscar pontos))
-    C --> UC3((Ver detalhes))
+    C --> UC2((Pesquisar pontos))
+    C --> UC3((Visualizar detalhes))
 
     A[Administrador] --> UC1
     A --> UC2
@@ -56,19 +59,9 @@ flowchart LR
     A --> UC6((Excluir ponto))
 ```
 
----
-
-## Sobre as issues (GitHub Projects)
-O planejamento do trabalho deve ser realizado utilizando GitHub Projects.
-Os requisitos funcionais devem ser lançados no projeto do repositório, na coluna **Project Backlog**.
-Na coluna **TODO**, devem ficar as atividades do sprint seguinte.
-
-Exemplo prático para agora (entrega TP1):
-- **Project Backlog:** RF01, RF02, RF03, RF04, RF05, RF06.
-- **TODO (TP2):** definir stack, modelar arquitetura C4, documentar decisões arquiteturais.
-
-## Estrutura mínima do repositório
-Não existe template obrigatório, mas a estrutura conta na avaliação.
-Para TP1, estrutura simples:
-- `README.md` (fonte única de informação)
-- `.github/ISSUE_TEMPLATE/` (templates de issue para popular o Projects)
+## Tecnologias previstas
+As tecnologias serão definidas ao longo do desenvolvimento, mas a proposta inicial considera:
+- Frontend web
+- Backend com API
+- Banco de dados para persistência das informações
+- GitHub para versionamento e documentação

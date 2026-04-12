@@ -1,14 +1,13 @@
 ---
-name: TODO (próximo sprint)
-about: Atividade que entra na coluna TODO do próximo sprint
+name: TODO Sprint
+about: Atividade para coluna TODO do sprint seguinte
 ---
 
-## Objetivo da tarefa
-Descreva em uma frase.
+## Tarefa
+Descreva a atividade do próximo sprint (TP2, TP3, TP4...).
 
-## Entregável esperado
-O que deve ficar pronto ao final do sprint.
+## Resultado esperado
+O que vai estar pronto ao fim do sprint.
 
 ## Checklist
-- [ ] Implementado
-- [ ] Documentado no README (se necessário)
+- [ ] Concluído

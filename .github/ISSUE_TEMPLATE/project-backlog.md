@@ -1,14 +1,13 @@
 ---
-name: Backlog (RF)
-about: Item de requisito funcional para coluna Project Backlog
+name: Project Backlog
+about: Requisito funcional para coluna Project Backlog
 ---
 
-## Título
-RFxx - (nome curto)
+## Requisito funcional (RF)
+Ex.: RF03 - Buscar pontos por bairro, nome ou tipo de resíduo.
 
-## Descrição rápida
-O que precisa existir na solução.
+## O que precisa ser entregue
+Descreva de forma curta e direta.
 
-## Critério simples de pronto
-- [ ] Funciona
-- [ ] Foi testado manualmente
+## Critério de aceite
+- [ ] Funciona como descrito
