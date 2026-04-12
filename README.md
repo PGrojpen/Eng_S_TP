@@ -42,20 +42,20 @@ A escolha por um sistema web se deve à facilidade de acesso por navegador, à p
 - RNF05: O código-fonte e a documentação devem ser mantidos em repositório público no GitHub.
 - RNF06: A documentação do projeto deve ser escrita em Markdown.
 
-## Histórias de usuário
-- Como cidadão, quero buscar pontos de coleta próximos ou adequados ao tipo de resíduo que desejo descartar para realizar o descarte corretamente.
-- Como usuário, quero visualizar informações sobre o ponto de coleta para saber onde ele fica e quais materiais aceita.
-- Como administrador do sistema, quero cadastrar novos pontos de coleta para manter a base atualizada.
-- Como administrador do sistema, quero editar ou remover pontos de coleta para corrigir informações desatualizadas.
-
 ## Caso de uso
-Os principais casos de uso da aplicação envolvem:
-- Consultar pontos de coleta
-- Pesquisar pontos de coleta
-- Visualizar detalhes de um ponto de coleta
-- Cadastrar ponto de coleta
-- Editar ponto de coleta
-- Excluir ponto de coleta
+```mermaid
+flowchart LR
+    C[Cidadão] --> UC1((Consultar pontos))
+    C --> UC2((Pesquisar pontos))
+    C --> UC3((Visualizar detalhes))
+
+    A[Administrador] --> UC1
+    A --> UC2
+    A --> UC3
+    A --> UC4((Cadastrar ponto))
+    A --> UC5((Editar ponto))
+    A --> UC6((Excluir ponto))
+```
 
 ## Tecnologias previstas
 As tecnologias serão definidas ao longo do desenvolvimento, mas a proposta inicial considera:
