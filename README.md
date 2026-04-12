@@ -1,37 +1,74 @@
-# EcoPonto BH
+# EcoPonto BH (TP1)
 
-Aplicação web (frontend + backend) para facilitar o descarte correto de resíduos em Belo Horizonte, conectando cidadãos a pontos de coleta seletiva e de resíduos especiais.
+## Contexto rápido
+Projeto simples da disciplina para praticar Engenharia de Software com foco em ODS.
+A ideia é resolver um problema real sem complicar demais.
 
-## Status do projeto
-**Sprint atual:** TP1 — Definição do Problema e Planejamento Inicial.
+## O que esta entrega (TP1) precisa ter
+Nesta entrega, cada aluno(a) deverá realizar a análise inicial do projeto que será desenvolvido. Para tanto, espera-se que sejam definidos:
+1. o objetivo que será abordado no trabalho;
+2. o problema que será resolvido pela solução de software planejada;
+3. o tipo de solução que será desenvolvido;
+4. os requisitos funcionais e não funcionais da aplicação;
+5. o diagrama de caso de uso da aplicação.
 
-## ODS e problema
-- **ODS atendido:** ODS 12 — Consumo e Produção Responsáveis.
-- **Problema:** falta de informação centralizada sobre onde descartar corretamente recicláveis e resíduos especiais (pilhas, baterias, eletrônicos etc.).
+---
 
-## Tipo de solução
-Sistema web com frontend e backend (não é apenas página estática), com API e persistência de dados.
+## 1) Objetivo
+Ajudar pessoas a descartarem resíduos corretamente, encontrando pontos de coleta em Belo Horizonte.
 
-## Entregáveis do TP1
-- Requisitos funcionais e não funcionais: [`docs/requisitos.md`](docs/requisitos.md)
-- Histórias de usuário e critérios de aceite: [`docs/requisitos.md`](docs/requisitos.md)
-- Diagrama de caso de uso: [`docs/casos-de-uso.md`](docs/casos-de-uso.md)
-- Planejamento geral + backlog do TP2 (base para GitHub Projects): [`docs/planejamento-tp1.md`](docs/planejamento-tp1.md)
-- Padronização de issues para backlog: [`.github/ISSUE_TEMPLATE`](.github/ISSUE_TEMPLATE)
+## 2) Problema
+Muita gente não sabe onde descartar recicláveis e resíduos especiais (pilhas, baterias, eletrônicos etc.).
+Sem informação centralizada, o descarte acaba sendo feito de forma errada.
 
-## Estrutura do repositório
-```text
-.
-├── README.md
-├── docs
-│   ├── requisitos.md
-│   ├── casos-de-uso.md
-│   └── planejamento-tp1.md
-└── .github
-    └── ISSUE_TEMPLATE
+## 3) Tipo de solução
+Sistema web com frontend + backend (não é página estática).
+
+## 4) Requisitos
+### Funcionais (RF)
+- RF01: Cadastrar ponto de coleta.
+- RF02: Listar pontos de coleta.
+- RF03: Buscar por bairro, nome ou tipo de resíduo.
+- RF04: Ver detalhes de um ponto.
+- RF05: Editar ponto.
+- RF06: Excluir ponto.
+
+### Não funcionais (RNF)
+- RNF01: Interface simples e direta.
+- RNF02: Funcionar em navegadores modernos.
+- RNF03: Consultas com resposta rápida (meta: até 2s em cenário normal).
+- RNF04: Dados persistidos em banco.
+- RNF05: Projeto público no GitHub.
+- RNF06: Documentação em Markdown.
+
+## 5) Diagrama de caso de uso
+```mermaid
+flowchart LR
+    C[Cidadão] --> UC1((Consultar pontos))
+    C --> UC2((Buscar pontos))
+    C --> UC3((Ver detalhes))
+
+    A[Administrador] --> UC1
+    A --> UC2
+    A --> UC3
+    A --> UC4((Cadastrar ponto))
+    A --> UC5((Editar ponto))
+    A --> UC6((Excluir ponto))
 ```
 
-## Próximos passos (TP2)
-1. Definir stack tecnológica final.
-2. Elaborar arquitetura usando modelo C4.
-3. Atualizar GitHub Projects com cards do TP3.
+---
+
+## Sobre as issues (GitHub Projects)
+O planejamento do trabalho deve ser realizado utilizando GitHub Projects.
+Os requisitos funcionais devem ser lançados no projeto do repositório, na coluna **Project Backlog**.
+Na coluna **TODO**, devem ficar as atividades do sprint seguinte.
+
+Exemplo prático para agora (entrega TP1):
+- **Project Backlog:** RF01, RF02, RF03, RF04, RF05, RF06.
+- **TODO (TP2):** definir stack, modelar arquitetura C4, documentar decisões arquiteturais.
+
+## Estrutura mínima do repositório
+Não existe template obrigatório, mas a estrutura conta na avaliação.
+Para TP1, estrutura simples:
+- `README.md` (fonte única de informação)
+- `.github/ISSUE_TEMPLATE/` (templates de issue para popular o Projects)
