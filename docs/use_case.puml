@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+
+actor "Cidadão" as C
+actor "Administrador" as A
+
+rectangle "EcoPonto BH" {
+  usecase "Consultar pontos de coleta" as UC1
+  usecase "Pesquisar pontos de coleta" as UC2
+  usecase "Visualizar detalhes do ponto" as UC3
+  usecase "Cadastrar ponto de coleta" as UC4
+  usecase "Editar ponto de coleta" as UC5
+  usecase "Excluir ponto de coleta" as UC6
+}
+
+C --> UC1
+C --> UC2
+C --> UC3
+
+A --> UC1
+A --> UC2
+A --> UC3
+A --> UC4
+A --> UC5
+A --> UC6
+@enduml
