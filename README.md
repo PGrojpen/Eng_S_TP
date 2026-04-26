@@ -42,20 +42,11 @@ A escolha por um sistema web se deve à facilidade de acesso por navegador, à p
 - RNF05: O código-fonte e a documentação devem ser mantidos em repositório público no GitHub.
 - RNF06: A documentação do projeto deve ser escrita em Markdown.
 
-## Caso de uso
-```mermaid
-flowchart LR
-    C[Cidadão] --> UC1((Consultar pontos))
-    C --> UC2((Pesquisar pontos))
-    C --> UC3((Visualizar detalhes))
+## Diagrama de Caso de Uso
 
-    A[Administrador] --> UC1
-    A --> UC2
-    A --> UC3
-    A --> UC4((Cadastrar ponto))
-    A --> UC5((Editar ponto))
-    A --> UC6((Excluir ponto))
-```
+![Diagrama de Caso de Uso](https://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/PGrojpen/Eng_S_TP/main/docs/use_case.puml&fmt=svg)
+
+> Fonte: [`docs/use_case.puml`](docs/use_case.puml)
 
 ## Tecnologias previstas
 As tecnologias serão definidas ao longo do desenvolvimento, mas a proposta inicial considera:
