@@ -1,0 +1,133 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: system-ui, sans-serif; background: #f5f5f0; }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.cabecalho {
+  background: #2d6a4f;
+  color: #fff;
+  padding: 12px 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.cabecalho h1 { font-size: 1.4rem; }
+.cabecalho p { font-size: 0.85rem; opacity: 0.85; }
+
+.conteudo {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.barra-lateral {
+  width: 280px;
+  min-width: 280px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.mapa-container { flex: 1; }
+
+/* Botão adicionar */
+.btn-adicionar {
+  margin: 12px;
+  padding: 10px;
+  background: #2d6a4f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  width: calc(100% - 24px);
+}
+.btn-adicionar:hover { background: #1b4332; }
+
+/* Lista de pontos */
+.lista-pontos {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 8px 8px;
+}
+.card-ponto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 6px;
+  background: #f8fffe;
+}
+.card-ponto strong { font-size: 0.9rem; color: #1a202c; }
+.card-ponto span { font-size: 0.8rem; color: #4a5568; }
+.card-ponto small { font-size: 0.75rem; color: #718096; }
+
+.aviso { padding: 12px; color: #718096; font-size: 0.85rem; }
+
+/* Formulário overlay */
+.formulario-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.formulario {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  width: 420px;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.formulario h2 { color: #2d6a4f; margin-bottom: 4px; }
+.formulario label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.88rem;
+  color: #2d3748;
+}
+.formulario input, .formulario textarea {
+  padding: 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+.formulario fieldset {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 10px;
+}
+.formulario legend { font-size: 0.85rem; color: #4a5568; padding: 0 4px; }
+.checkboxes { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.checkbox-item { display: flex; align-items: center; gap: 4px; font-size: 0.85rem; }
+
+.erro { color: #e53e3e; font-size: 0.85rem; }
+
+.botoes { display: flex; gap: 8px; justify-content: flex-end; }
+.botoes button {
+  padding: 8px 18px;
+  border-radius: 5px;
+  border: 1px solid #cbd5e0;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.botoes button[type="submit"] { background: #2d6a4f; color: #fff; border-color: #2d6a4f; }
+.botoes button[type="submit"]:hover { background: #1b4332; }
+.botoes button[type="button"]:hover { background: #edf2f7; }
