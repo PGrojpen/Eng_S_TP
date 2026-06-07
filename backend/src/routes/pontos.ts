@@ -5,12 +5,16 @@ const router = Router();
 
 router.get("/", async (_req: Request, res: Response) => {
   const pontos = await prisma.ponto.findMany({ orderBy: { createdAt: "desc" } });
-  const result = pontos.map((p) => ({ ...p, residuos: JSON.parse(p.residuos) }));
+  const result = pontos.map((p: typeof pontos[number]) => ({ ...p, residuos: JSON.parse(p.residuos) as string[] }));
   res.json(result);
 });
 
 router.get("/:id", async (req: Request, res: Response) => {
-  const ponto = await prisma.ponto.findUnique({ where: { id: Number(req.params.id) } });
+  const id = Number(req.params.id);
+  if (!Number.isInteger(id) || id <= 0) {
+    res.status(404).json({ error: "Ponto não encontrado" }); return;
+  }
+  const ponto = await prisma.ponto.findUnique({ where: { id } });
   if (!ponto) { res.status(404).json({ error: "Ponto não encontrado" }); return; }
   res.json({ ...ponto, residuos: JSON.parse(ponto.residuos) });
 });
