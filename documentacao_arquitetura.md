@@ -24,7 +24,7 @@ O **EcoPonto BH** é uma aplicação web que centraliza informações sobre pont
 |---|---|---|
 | Frontend | React + Vite | Biblioteca amplamente adotada para SPAs; Vite oferece build rápido e desenvolvimento moderno |
 | Backend | Node.js + Express | Ecossistema JavaScript unificado com o frontend; Express é minimalista e suficiente para uma API REST simples |
-| Banco de Dados | PostgreSQL | Banco relacional robusto, open-source e adequado para dados estruturados |
+| Banco de Dados | SQLite | Banco relacional embutido, sem servidor, ideal para projetos com escopo local e prototipação rápida |
 | ORM | Prisma | Abstrai queries SQL, oferece tipagem automática e migrations declarativas |
 | Comunicação | REST (JSON) | Padrão simples e amplamente suportado, adequado ao escopo do projeto |
 
@@ -55,7 +55,7 @@ Desenvolvido com React e Vite, é a interface com a qual o usuário interage dir
 Desenvolvido com Node.js e Express, expõe os endpoints da API que o frontend consome. É responsável por receber as requisições, aplicar as regras de negócio e coordenar o acesso ao banco de dados por meio do ORM Prisma.
 
 **Banco de Dados**
-Utiliza PostgreSQL para persistência dos dados. Armazena as informações dos pontos de coleta, incluindo nome, endereço, bairro, descrição e tipos de resíduos aceitos. O acesso ao banco é feito exclusivamente pelo backend, via Prisma.
+Utiliza SQLite para persistência dos dados, acessado por meio do driver `better-sqlite3` integrado ao Prisma. Armazena as informações dos pontos de coleta, incluindo nome, endereço, bairro, descrição e tipos de resíduos aceitos. O acesso ao banco é feito exclusivamente pelo backend, via Prisma Client com adapter SQLite.
 
 A comunicação entre o frontend e o backend ocorre via HTTP/REST. O backend acessa o banco de dados por meio do Prisma Client, que traduz as operações em queries SQL.
 
@@ -96,7 +96,7 @@ O **Prisma Client** é utilizado pelos services para realizar as operações no 
 
 | Método | Rota | Descrição |
 |---|---|---|
-| `GET` | `/api/pontos` | Lista todos os pontos (suporta filtros via query params) |
+| `GET` | `/api/pontos` | Lista todos os pontos ordenados por data de criação (mais recente primeiro) |
 | `GET` | `/api/pontos/:id` | Retorna os detalhes de um ponto específico |
 | `POST` | `/api/pontos` | Cadastra um novo ponto de coleta |
 | `PUT` | `/api/pontos/:id` | Atualiza os dados de um ponto existente |
